@@ -1599,8 +1599,6 @@ class Player:
         except pixcat.terminal.KittyAnswerTimeout:
             self.error = "Kitty did not answer in time. Are you using Kitty?"
         finally:
-            curses.nocbreak()
-            curses.endwin()
             self.client.close()
             self.client.disconnect()
             if self.error:
